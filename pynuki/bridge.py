@@ -2,11 +2,11 @@
 # coding: utf-8
 
 """
-Based on the Bridge API version 1.13.2
+Based on the Bridge API version 1.13.3
 
 Documentation:
 https://developer.nuki.io/t/bridge-http-api/26
-https://developer.nuki.io/uploads/short-url/a8eIacr0ku9zogOyuIuSEyw1PcA.pdf
+https://nuki.io/wp-content/uploads/2024/10/20241024NukiBridgeAPI1_13_3.pdf
 """
 
 import logging
@@ -31,12 +31,14 @@ class NukiBridge(object):
     def __init__(
         self,
         hostname,
+        bridgeId,
         token=None,
         port=8080,
         secure=True,
         timeout=REQUESTS_TIMEOUT,
     ):
         self.hostname = hostname
+        self.bridgeId = bridgeId
         self.port = port
         self.__api_url = f"http://{hostname}:{port}"
         self.secure = secure
@@ -60,7 +62,7 @@ class NukiBridge(object):
             logger.warning("No bridge discovered.")
         else:
             return [
-                NukiBridge(hostname=x.get("ip"), port=x.get("port"))
+                NukiBridge(hostname=x.get("ip"), bridgeId=x.get("bridgeId"), port=x.get("port"))
                 for x in bridges
             ]
 
