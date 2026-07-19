@@ -177,6 +177,12 @@ class NukiBridge(object):
     def callback_remove(self, callback_id):
         return self.__rq("callback/remove", {"id": callback_id})
 
+    def callback_remove_url(self, callback_url):
+        callbacks = self.callback_list()
+        for cb in callbacks["callbacks"]:
+            if cb['url'] == callback_url:
+                self.callback_remove(cb['id'])
+
     # Maintainance endpoints
 
     def log(self, offset=0, count=100):
