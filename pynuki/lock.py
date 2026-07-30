@@ -53,10 +53,6 @@ class NukiLock(NukiDevice):
         return self._json.get("batteryChargeState")
 
     @property
-    def is_battery_critical(self):
-        return self._json.get("batteryCritical")
-
-    @property
     def battery_critical_keypad(self):
         return self._json.get("keypadBatteryCritical")
 
