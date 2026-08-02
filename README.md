@@ -9,7 +9,7 @@ The plugin is based on [pynuki](https://github.com/pschmitt/pynuki/)
 
 The Nuki Bridge(s) must be setup and reachable from the Domoticz server with HTTPS.
 
-Via the Nuki smartphone application (Android or iOS), enable API access and note the API token.
+Via the Nuki smartphone application (Android or iOS), enable API access on the bridge and note the API token.
 Go to manage my devices, and select the bridge or wifi enabled smart lock and connect to the device.
 Turn on the HTTP API and check the details in the screen. The API token should be 6-20 characters long,
 even though the app allows you to set a longer one.
