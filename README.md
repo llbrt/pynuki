@@ -10,6 +10,7 @@ The plugin is based on [pynuki](https://github.com/pschmitt/pynuki/)
 | Operation | Status |
 |-----------|--------|
 | Bridge cloud discovery  | :white_check_mark: |
+| Handle several bridges  | should work |
 | Lock door switch  | :white_check_mark: |
 | Lock unlatch switch  | :white_check_mark: |
 | Lock door sensor  | should work |
@@ -138,8 +139,8 @@ services:
     image: domoticz-nuki:latest
     restart: unless-stopped
     ports:
-      - "8080:8080"
-      - "55234:55234"
+      - 8080:8080
+      - 55234:55234
     volumes:
       - ./domoticz:/opt/domoticz/userdata
 EOF
