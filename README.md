@@ -1,4 +1,4 @@
-# Domoticz Nuki plugin based on pynuki
+# Domoticz Nuki Bridge plugin based on pynuki
 
 Python plugin for Domoticz to interact with [Nuki](https://nuki.io) smart locks and openers
 via a [Nuki Bridge](https://help.nuki.io/hc/en-001/sections/360004474718-Bridge)
