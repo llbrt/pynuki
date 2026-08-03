@@ -5,6 +5,18 @@ via a [Nuki Bridge](https://help.nuki.io/hc/en-001/sections/360004474718-Bridge)
 
 The plugin is based on [pynuki](https://github.com/pschmitt/pynuki/)
 
+## Status
+
+| Operation | Status |
+|-----------|--------|
+| Bridge cloud discovery  | :white_check_mark: |
+| Lock door switch  | :white_check_mark: |
+| Lock unlatch switch  | :white_check_mark: |
+| Lock door sensor  | should work |
+| Opener ring to open  | should work |
+| Opener electric strike actuation  | should work |
+| Opener continuous mode  | should work |
+
 ## Requirements
 
 The Nuki Bridge(s) must be setup and reachable from the Domoticz server with HTTPS.
