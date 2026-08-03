@@ -53,7 +53,7 @@ If setting up of the callback fails, you should consider lowering the poll inter
 ### Troubleshooting
 
 You have to enable the addition of new devices before starting the plugin so it
-can create the new devices (locks and openers) when necessary
+can create the new devices (locks and openers) when necessary, such as the first start.
 
 ```
 Error: Nuki: (Nuki) Unit creation failed, Domoticz settings prevent accepting new devices.
