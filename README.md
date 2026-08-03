@@ -49,6 +49,20 @@ Enter a name and the required parameters: Nuki Bridge API token, Domoticz server
 
 If setting up of the callback fails, you should consider lowering the poll interval.
 
+### Troubleshooting
+
+To list the Nuki bridges connected to the Nuki servers from your Internet access, open: 
+
+```
+https://api.nuki.io/discover/bridges
+```
+
+To list the callbacks registered on the Nuki bridge, you may open the unsecure URL
+
+```
+http://<Bridge IP>:<Bridge API port>/callback/list?token=<API token>
+```
+
 ## Docker integration
 
 `punuki` included in this repository requires the python libraries `requests` and `PyNaCl`.
@@ -98,7 +112,6 @@ cat > docker-compose.yml << EOF
 services:
   domoticz:
     image: domoticz-nuki:latest
-    container_name: domoticz
     restart: unless-stopped
     ports:
       - "8080:8080"
