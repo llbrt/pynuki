@@ -51,6 +51,30 @@ If setting up of the callback fails, you should consider lowering the poll inter
 
 ### Troubleshooting
 
+You have to enable the addition of new devices before starting the plugin so it
+can create the new devices (locks and openers) when necessary
+
+```
+Error: Nuki: (Nuki) Unit creation failed, Domoticz settings prevent accepting new devices.
+Error: Nuki: Call to function 'onStart' failed, exception details:
+Error: Nuki: Traceback (most recent call last):
+Error: Nuki:   File "/opt/domoticz/userdata/plugins/DomoticzNukiBridge/plugin.py", line 817, in onStart
+Error: Nuki:     _plugin.onStart()
+Error: Nuki:     ~~~~~~~~~~~~~~~^^
+Error: Nuki:   File "/opt/domoticz/userdata/plugins/DomoticzNukiBridge/plugin.py", line 669, in onStart
+Error: Nuki:     self._refresh_bridge(bridge_id, bridge, create_missing=True, recreate_units=recreate_units)
+Error: Nuki:     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error: Nuki:   File "/opt/domoticz/userdata/plugins/DomoticzNukiBridge/plugin.py", line 532, in _refresh_bridge
+Error: Nuki:     if not self._ensure_units(device_id, dev):
+Error: Nuki:            ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+Error: Nuki:   File "/opt/domoticz/userdata/plugins/DomoticzNukiBridge/plugin.py", line 442, in _ensure_units
+Error: Nuki:     self._ensure_lock_units(device_id, dev)
+Error: Nuki:     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+Error: Nuki:   File "/opt/domoticz/userdata/plugins/DomoticzNukiBridge/plugin.py", line 363, in _ensure_lock_units
+Error: Nuki:     existing = Devices[device_id].Units
+Error: Nuki:                ~~~~~~~^^^^^^^^^^^
+```
+
 To list the Nuki bridges connected to the Nuki servers from your Internet access, open: 
 
 ```
